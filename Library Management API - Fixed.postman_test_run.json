@@ -1,0 +1,612 @@
+{
+	"id": "735bcb7b-7229-43ab-8718-4e53d14b0ca5",
+	"name": "Library Management API - Fixed",
+	"timestamp": "2025-10-23T07:53:01.490Z",
+	"collection_id": "36464632-0c603e3e-6912-4d1a-8761-078e36c81e2b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 40,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-10-23T07:52:56.744Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "0cc24e7f-8efe-4837-a0a6-d352ffca3f3c",
+			"name": "Register User",
+			"url": "http://localhost:3000/auth/register",
+			"time": 605,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response has user data": true,
+				"Password not in response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has user data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Password not in response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				605
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response has user data": true,
+					"Password not in response": true
+				}
+			]
+		},
+		{
+			"id": "fb4b0f9d-5001-40a5-ab98-7725d4156379",
+			"name": "Login",
+			"url": "http://localhost:3000/auth/login",
+			"time": 87,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response has access token": true,
+				"Token is JWT format": true,
+				"Response time is acceptable": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has access token": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token is JWT format": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is acceptable": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response has access token": true,
+					"Token is JWT format": true,
+					"Response time is acceptable": true
+				}
+			]
+		},
+		{
+			"id": "a725fd42-c868-483b-9ed6-aef039269a79",
+			"name": "Create Book - Clean Code",
+			"url": "http://localhost:3000/books",
+			"time": 281,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Book created with correct data": true,
+				"Available copies is correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book created with correct data": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Available copies is correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				281
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Book created with correct data": true,
+					"Available copies is correct": true
+				}
+			]
+		},
+		{
+			"id": "0b02f0af-9aac-49ed-ab4e-ce3320243306",
+			"name": "Create Book - Pragmatic Programmer",
+			"url": "http://localhost:3000/books",
+			"time": 303,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Book created successfully": true,
+				"Book has correct structure": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book created successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book has correct structure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				303
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Book created successfully": true,
+					"Book has correct structure": true
+				}
+			]
+		},
+		{
+			"id": "68b317fd-7547-4042-afa2-b42f007d9e47",
+			"name": "Get All Books",
+			"url": "http://localhost:3000/books",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is array": true,
+				"Array contains our books": true,
+				"Books have required fields": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Array contains our books": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Books have required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				27
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is array": true,
+					"Array contains our books": true,
+					"Books have required fields": true
+				}
+			]
+		},
+		{
+			"id": "faadb825-5351-4843-9e6b-32ed32579f45",
+			"name": "Get Book by ID",
+			"url": "http://localhost:3000/books/2",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Book has required fields": true,
+				"Book ID matches request": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book has required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book ID matches request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Book has required fields": true,
+					"Book ID matches request": true
+				}
+			]
+		},
+		{
+			"id": "bfab0b4a-aa76-4a30-a172-d540da68b6f6",
+			"name": "Update Book",
+			"url": "http://localhost:3000/books/2",
+			"time": 297,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Book updated successfully": true,
+				"Other fields unchanged": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book updated successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Other fields unchanged": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				297
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Book updated successfully": true,
+					"Other fields unchanged": true
+				}
+			]
+		},
+		{
+			"id": "453157dd-1c61-4a6c-b55b-25bb796668e8",
+			"name": "Borrow a Book",
+			"url": "http://localhost:3000/borrowings",
+			"time": 285,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Borrowing created successfully": true,
+				"Borrowing has correct book_id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Borrowing created successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Borrowing has correct book_id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				285
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Borrowing created successfully": true,
+					"Borrowing has correct book_id": true
+				}
+			]
+		},
+		{
+			"id": "e3d9bd13-3ce8-4f7c-a55f-d9777d94350b",
+			"name": "Get All Borrowings",
+			"url": "http://localhost:3000/borrowings",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is array": true,
+				"Borrowings have required fields": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Borrowings have required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is array": true,
+					"Borrowings have required fields": true
+				}
+			]
+		},
+		{
+			"id": "36c13dee-b370-4e11-af7a-ed8123c769e5",
+			"name": "Get Borrowing by ID",
+			"url": "http://localhost:3000/borrowings/1",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Borrowing has required fields": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Borrowing has required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Borrowing has required fields": true
+				}
+			]
+		},
+		{
+			"id": "bca5f182-5412-49a8-89d9-5161cebdc6dd",
+			"name": "Return a Book",
+			"url": "http://localhost:3000/borrowings/1/return",
+			"time": 155,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Book returned successfully": true,
+				"Borrowing ID matches": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Book returned successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Borrowing ID matches": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				155
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Book returned successfully": true,
+					"Borrowing ID matches": true
+				}
+			]
+		},
+		{
+			"id": "515275c7-a909-474c-8b17-0203214b378a",
+			"name": "Delete Borrowing",
+			"url": "http://localhost:3000/borrowings/1",
+			"time": 91,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Success message present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Success message present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				91
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Success message present": true
+				}
+			]
+		},
+		{
+			"id": "f98772f5-ce37-4d98-8bc0-f85aa5a270fa",
+			"name": "Access Without Token",
+			"url": "http://localhost:3000/books",
+			"time": 9,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true,
+				"Error response structure": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response structure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status code is 401": true,
+					"Error response structure": true
+				}
+			]
+		},
+		{
+			"id": "99f45178-1134-4fbd-a823-17cd6e3cec2f",
+			"name": "Borrow Non-Existent Book",
+			"url": "http://localhost:3000/borrowings",
+			"time": 25,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error message present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				25
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error message present": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2185,
+	"collection": {
+		"requests": [
+			{
+				"id": "0cc24e7f-8efe-4837-a0a6-d352ffca3f3c",
+				"method": "POST"
+			},
+			{
+				"id": "fb4b0f9d-5001-40a5-ab98-7725d4156379",
+				"method": "POST"
+			},
+			{
+				"id": "a725fd42-c868-483b-9ed6-aef039269a79",
+				"method": "POST"
+			},
+			{
+				"id": "0b02f0af-9aac-49ed-ab4e-ce3320243306",
+				"method": "POST"
+			},
+			{
+				"id": "68b317fd-7547-4042-afa2-b42f007d9e47",
+				"method": "GET"
+			},
+			{
+				"id": "faadb825-5351-4843-9e6b-32ed32579f45",
+				"method": "GET"
+			},
+			{
+				"id": "bfab0b4a-aa76-4a30-a172-d540da68b6f6",
+				"method": "PUT"
+			},
+			{
+				"id": "453157dd-1c61-4a6c-b55b-25bb796668e8",
+				"method": "POST"
+			},
+			{
+				"id": "e3d9bd13-3ce8-4f7c-a55f-d9777d94350b",
+				"method": "GET"
+			},
+			{
+				"id": "36c13dee-b370-4e11-af7a-ed8123c769e5",
+				"method": "GET"
+			},
+			{
+				"id": "bca5f182-5412-49a8-89d9-5161cebdc6dd",
+				"method": "PUT"
+			},
+			{
+				"id": "515275c7-a909-474c-8b17-0203214b378a",
+				"method": "DELETE"
+			},
+			{
+				"id": "f98772f5-ce37-4d98-8bc0-f85aa5a270fa",
+				"method": "GET"
+			},
+			{
+				"id": "99f45178-1134-4fbd-a823-17cd6e3cec2f",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,149 @@
+### Library Management API - HTTP Requests
+### Use with REST Client extension in VS Code
+
+@baseUrl = http://localhost:3000
+@token = YOUR_TOKEN_HERE
+
+###############################################
+# Authentication
+###############################################
+
+### Register User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "password123"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "password123"
+}
+
+###############################################
+# Books
+###############################################
+
+### Get All Books
+GET {{baseUrl}}/books
+Authorization: Bearer {{token}}
+
+### Get Book by ID
+GET {{baseUrl}}/books/1
+Authorization: Bearer {{token}}
+
+### Create Book
+POST {{baseUrl}}/books
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "published_year": 2008,
+  "available_copies": 5
+}
+
+### Create Another Book
+POST {{baseUrl}}/books
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "The Pragmatic Programmer",
+  "author": "Andrew Hunt",
+  "isbn": "9780201616224",
+  "published_year": 1999,
+  "available_copies": 3
+}
+
+### Update Book
+PUT {{baseUrl}}/books/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Clean Code - Updated Edition",
+  "available_copies": 10
+}
+
+### Delete Book
+DELETE {{baseUrl}}/books/1
+Authorization: Bearer {{token}}
+
+###############################################
+# Borrowings
+###############################################
+
+### Get All Borrowings
+GET {{baseUrl}}/borrowings
+Authorization: Bearer {{token}}
+
+### Get Borrowing by ID
+GET {{baseUrl}}/borrowings/1
+Authorization: Bearer {{token}}
+
+### Create Borrowing (Borrow a Book)
+POST {{baseUrl}}/borrowings
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "bookId": 1,
+  "borrowerName": "John Doe",
+  "borrowDate": "2025-01-15",
+  "returnDate": "2025-01-29"
+}
+
+### Return a Book
+PUT {{baseUrl}}/borrowings/1/return
+Authorization: Bearer {{token}}
+
+### Delete Borrowing
+DELETE {{baseUrl}}/borrowings/1
+Authorization: Bearer {{token}}
+
+###############################################
+# Test Scenarios
+###############################################
+
+### Test: Borrow when no copies available
+POST {{baseUrl}}/borrowings
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "bookId": 999,
+  "borrowerName": "Jane Doe",
+  "borrowDate": "2025-01-15",
+  "returnDate": "2025-01-29"
+}
+
+### Test: Access without token (Should fail with 401)
+GET {{baseUrl}}/books
+
+### Test: Register duplicate user (Should fail with 409)
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "password123"
+}
+
+### Test: Login with wrong password (Should fail with 401)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "wrongpassword"
+}

@@ -1,10 +1,19 @@
+// ==================== src/app.module.ts ====================
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { APP_PIPE } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
+import { AuthModule } from './auth/auth.module';
+import { BooksModule } from './books/books.module';
+import { BorrowingsModule } from './borrowings/borrowings.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [DatabaseModule, AuthModule, BooksModule, BorrowingsModule],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },
+  ],
 })
 export class AppModule {}
